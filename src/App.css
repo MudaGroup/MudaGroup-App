@@ -91,3 +91,505 @@ body{
     margin-bottom: 10px;
   }
 }
+
+/* Gaya responsif untuk layar di bawah 480px */
+@media (max-width: 480px) {
+  .contractor-page {
+    padding: 20px; /* Mengurangi padding untuk layar kecil */
+  }
+
+  /* Mengatur ukuran font untuk judul di layar kecil */
+  .contractor-page h1 {
+    font-size: 1rem; /* Ukuran font lebih kecil */
+    margin-bottom: 30px; /* Mengurangi jarak antara judul dan gambar */
+  }
+
+  /* Mengatur ukuran gambar untuk layar kecil */
+  .contractor-page img {
+    max-width: 30%; /* Memperbesar ukuran gambar */
+    margin-top: 20px; /* Mengurangi margin atas */
+    margin-bottom: 20px; /* Mengurangi margin bawah */
+  }
+}
+
+
+/* Mengatur layout dasar untuk halaman retail */
+.Retail-component-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 40px;
+  margin-bottom: 80px;
+  /* padding: 0; */
+}
+
+.Retail-component-title h1 {
+  font-size: 2rem;
+  margin-bottom: 50px;
+  font-weight: bold;
+}
+
+/* Mengatur grid untuk menampilkan produk */
+.Retail-component-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Tetap 3 kolom pada layar besar */
+  gap: 20px;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.Retail-component-card {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+/* Mengatur gambar produk */
+.Retail-component-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+/* Mengatur nama produk */
+.Retail-component-card h2 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+/* Mengatur tombol */
+.Retail-component-card button {
+  background-color: #C4B271;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.Retail-component-card button:hover {
+  background-color: #1a1a1a;
+}
+
+/* Responsif untuk layar dengan lebar 768px */
+@media (max-width: 768px) {
+  .Retail-component-page {
+    margin-top: 30px;
+    margin-bottom: 50px;
+  }
+
+  .Retail-component-list {
+    grid-template-columns: repeat(3, 1fr); /* 3 kolom untuk layar sedang */
+  }
+
+  .Retail-component-title h1 {
+    font-size: 1.3rem;
+    margin-bottom: 30px;
+  }
+  
+  .Retail-component-card {
+    padding: 10px;
+  }
+  
+  .Retail-component-card h2 {
+    font-size: 0.8rem;
+  }
+  
+  .Retail-component-card button {
+    padding: 8px 16px;
+    font-size: 0.5rem;
+  }
+}
+
+/* Responsif untuk layar dengan lebar 480px */
+@media (max-width: 480px) {
+  .Retail-component-page {
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+
+  .Retail-component-list {
+    grid-template-columns: repeat(3, 1fr); /* 1 kolom untuk layar kecil */
+  }
+
+  .Retail-component-title h1 {
+    font-size: 1rem;
+    margin-bottom: 30px;
+    font-weight: bold;
+  }
+  
+  .Retail-component-card {
+    padding: 0px;
+  }
+  
+  .Retail-component-card h2 {
+    font-size: 0.6rem;
+  }
+  
+  .Retail-component-card button {
+    padding: 6px 12px;
+    font-size: 0.4rem;
+    margin-bottom: 10px;
+  }
+}
+
+/* Mengatur layout dasar untuk halaman General Contractor */
+.General-Contractor-Page {
+  /* display: flex;               Menggunakan flexbox untuk penataan */
+  flex-direction: column;
+  align-items: center;         /* Menempatkan elemen di tengah */
+  padding: 20px;              /* Memberikan padding di sekitar halaman */
+  margin-top: 20px;           /* Margin atas untuk jarak dengan elemen lain */
+}
+
+/* Gaya untuk tombol kembali */
+.btn-back-General-Contractor {
+  display: flex;
+  align-items: center;         /* Menempatkan ikon di tengah */
+  text-decoration: none;       /* Menghilangkan garis bawah */
+  color: #1a1a1a;              /* Warna teks tombol */
+  margin-bottom: 50px;         /* Jarak bawah untuk tombol kembali */
+  font-size: 1.8rem;           /* Ukuran font untuk teks */
+}
+
+/* Mengatur kartu General Contractor */
+.General-Contractor-Card {
+  display: grid;               /* Menggunakan grid untuk tata letak */
+  grid-template-columns: repeat(3, 1fr); /* Membagi menjadi 3 kolom */
+  gap: 50px;                   /* Jarak antara kartu */
+  justify-items: center;       /* Menempatkan kartu di tengah setiap kolom */
+}
+
+/* Gaya untuk tombol yang berisi gambar */
+.General-Contractor-Card a {
+  background-color: transparent; /* Latar belakang transparan */
+  border: none;                  /* Menghilangkan border */
+  cursor: pointer;               /* Menampilkan pointer saat hover */
+  transition: transform 0.3s;    /* Efek transisi untuk hover */
+}
+
+/* Gaya untuk gambar dalam tombol */
+.General-Contractor-Card a img {
+  width: 100%;                  /* Mengatur gambar agar responsif */
+  height: auto;                 /* Tinggi otomatis untuk menjaga rasio aspek */
+  border-radius: 5px;          /* Melengkungkan sudut gambar */
+}
+
+/* Efek hover pada tombol */
+.General-Contractor-Card a:hover {
+  transform: scale(1.05);       /* Memperbesar tombol sedikit saat hover */
+}
+
+/* Media query untuk responsif */
+@media (max-width: 768px) {
+  .General-Contractor-Card {
+    grid-template-columns: repeat(3, 1fr); /* 2 kolom untuk layar lebih kecil */
+    gap: 25px;
+  }
+
+  /* Gaya untuk gambar dalam tombol */
+.General-Contractor-Card a img {
+  width: 100%;                  /* Mengatur gambar agar responsif */
+  height: auto;                 /* Tinggi otomatis untuk menjaga rasio aspek */
+}
+}
+
+@media (max-width: 480px) {
+  .General-Contractor-Card {
+    grid-template-columns: repeat(3, 1fr); /* 2 kolom untuk layar lebih kecil */
+  gap: 15px;
+  }
+
+  .General-Contractor-Card a img {
+    width: 100%;                  /* Mengatur gambar agar responsif */
+    height: auto;                 /* Tinggi otomatis untuk menjaga rasio aspek */
+  }
+}
+
+
+/* Container utama */
+.General-Contractor-Kandang {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Tombol back */
+.btn-back-General-Contractor {
+  display: inline-flex;
+  align-items: center;
+  background-color: #f5f5f5;
+  padding: 10px;
+  border-radius: 50%;
+  text-decoration: none;
+  color: #333;
+  font-size: 24px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  transition: background-color 0.3s ease;
+}
+
+.btn-back-General-Contractor:hover {
+  background-color: #e0e0e0;
+}
+
+/* Judul */
+.Genereal-Contractor-Kandang-title {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* Dropdown filter */
+.General-Contractor-Kandang-Category {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.Category-Status, .Category-Location {
+  /* display: flex; */
+  flex-direction: column;
+  /* gap: 10px; */
+}
+
+select {
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  width: 100%;
+  max-width: 300px;
+  /* margin: 0 auto; */
+  /* text-align: center; */
+}
+
+/* Grid untuk card dengan 3 kolom */
+.General-Contractor-Kandang-Card {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Membuat 3 kolom */
+  gap: 20px;
+}
+
+/* Kartu individu */
+.General-Contractor-Kandang-Card button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  color: #333;
+  background-color: #fff;
+  padding: 10px;
+  border: 1px solid black;
+  border-radius: 8px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.General-Contractor-Kandang-Card button:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Gambar di dalam kartu */
+.General-Contractor-Kandang-Card img {
+  width: 100%;
+  max-width: 250px;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+/* Judul di dalam kartu */
+.General-Contractor-Kandang-Card h2 {
+  font-size: 18px;
+  font-weight: 600;
+  text-align: center;
+}
+
+/* Responsif untuk layar kecil */
+@media (max-width: 768px) {
+  .General-Contractor-Kandang-Card {
+      grid-template-columns: repeat(3, 1fr); /* 2 kolom di layar kecil */
+  }
+
+  /* Judul */
+.Genereal-Contractor-Kandang-title {
+  font-size: 1.7rem;
+}
+
+/* Dropdown filter */
+.General-Contractor-Kandang-Category {
+  gap: 10px;
+  margin-bottom: 30px;
+}
+
+select {
+  padding: 5px;
+  font-size: 16px;
+  border: 1px solid #ddd;
+}
+
+/* Judul di dalam kartu */
+.General-Contractor-Kandang-Card h2 {
+  font-size: 14px;
+}
+}
+
+@media (max-width: 480px) {
+  .General-Contractor-Kandang-Card {
+    grid-template-columns: repeat(3, 1fr); /* 2 kolom di layar kecil */
+  }
+
+  /* Judul */
+.Genereal-Contractor-Kandang-title {
+  font-size: 1.5rem;
+}
+
+/* Dropdown filter */
+.General-Contractor-Kandang-Category {
+  gap: 5px;
+  margin-bottom: 20px;
+}
+
+/* Judul di dalam kartu */
+.General-Contractor-Kandang-Card h2 {
+  font-size: 9px;
+}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Style untuk komponen Footer */
+.Footer-Component {
+  background-color: #1a1a1a; /* Warna latar belakang abu-abu terang */
+  padding: 40px 0; /* Padding atas dan bawah */
+  /* text-align: center; Menyelaraskan konten di tengah */
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1); /* Efek bayangan di atas */
+}
+
+.Footer-Component .container {
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+  /* max-width: 1200px; */
+  margin: 0 auto; /* Memusatkan kontainer */
+}
+
+.Footer-Component img {
+  width: 100px; /* Ukuran logo */
+  height: auto; /* Menjaga rasio gambar */
+  margin-bottom: 20px; /* Jarak bawah antara logo dan teks */
+}
+
+.Footer-Component-Title {
+  font-size: 1.5rem; /* Ukuran font untuk judul */
+  color: #fff; /* Warna teks abu-abu gelap */
+  font-weight: bold; /* Membuat teks lebih tebal */
+  margin-bottom: 10px; /* Jarak bawah antara judul dan alamat */
+  flex-direction: row;
+  display: flex;
+}
+
+.Footer-Component-Title p {
+  margin: 0; /* Menghilangkan margin default pada paragraf */
+  color: #C4B271;
+  margin-right: 5px;
+}
+
+.Footer-Component-Address {
+  font-size: 0.7rem; /* Ukuran font untuk alamat */
+  color: #fff; /* Warna teks abu-abu sedang */
+  text-decoration: none; /* Menghilangkan garis bawah pada link */
+  transition: color 0.3s ease; /* Efek transisi pada hover */
+}
+
+.copyright-component {
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  justify-content: center;
+  height: 20px;
+}
+
+/* Gaya responsif untuk layar di bawah 768px */
+@media (max-width: 768px) {
+  .Footer-Component-Title {
+    font-size: 1.2rem; /* Ukuran font lebih kecil untuk judul */
+  }
+
+  .Footer-Component-Address {
+    font-size: 0.6rem; /* Ukuran font lebih kecil untuk alamat */
+  }
+
+  .Footer-Component img {
+    width: 80px; /* Ukuran logo lebih kecil untuk layar kecil */
+  }
+
+  .copyright-component {
+    font-size: 0.8rem; /* Ukuran font untuk copyright */
+  }
+}
+
+/* Gaya responsif untuk layar di bawah 480px */
+@media (max-width: 480px) {
+  .Footer-Component-Title {
+    font-size: 1rem; /* Ukuran font lebih kecil untuk judul */
+  }
+
+  .Footer-Component-Address {
+    font-size: 0.5rem; /* Ukuran font lebih kecil untuk alamat */
+  }
+
+  .Footer-Component img {
+    width: 60px; /* Ukuran logo lebih kecil untuk layar sangat kecil */
+  }
+
+  .copyright-component {
+    font-size: 0.7rem; /* Ukuran font untuk copyright */
+  }
+}

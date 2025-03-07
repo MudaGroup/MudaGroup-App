@@ -1,0 +1,200 @@
+/* Styling umum untuk halaman profil */
+.Profile-page-detail {
+    /* display: flex; */
+    /* flex-direction: column; */
+    /* align-items: center; */
+    padding-top: 50px;
+    padding-bottom: 30px;
+    background-color: #fff;
+}
+
+.Profile-page-detail-title {
+    font-size: 2rem;
+    /* color: #333; */
+    margin-bottom: 20px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.Profile-page-detail-body {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between; /* Mengatur item pertama di flex-start dan yang terakhir di flex-end */
+    align-items: flex-start; /* Menyusun item pada bagian atas */
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 30px;
+    gap: 60px;
+}
+
+/* Styling deskripsi dari profil */
+.Profile-page-detail-desc {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 15px;
+    text-align: justify;
+    /* line-height: 1.6; */
+}
+
+/* Styling gambar profil */
+.Profile-page-detail-body img {
+    max-width: 300px;
+    height: 300px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 15px;
+}
+
+@media (max-width: 768px) {
+    .Profile-page-detail {
+        padding-bottom: 0px;
+    }
+
+    .Profile-page-detail-body {
+        flex-direction: row;
+        /* align-items: center; */
+        gap: 20px;
+    }
+
+    .Profile-page-detail-title {
+        font-size: 1.3rem;
+    }
+
+    .Profile-page-detail-body img {
+        width: 150px;
+        height: 150px;
+    }
+
+    .Profile-page-detail-desc {
+        font-size: 0.85rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .Profile-page-detail {
+        padding-top: 20px;
+    }
+
+    .Profile-page-detail-title {
+        font-size: 1rem;
+    }
+
+    .Profile-page-detail-body {
+        flex-direction: row;
+        gap: 5px;
+    }
+
+    .Profile-page-detail-body img {
+        width: 100px;
+        height: 100px;
+    }
+
+    .Profile-page-detail-desc {
+        font-size: 0.65rem;
+    }
+}
+
+
+/* Styling umum untuk halaman visi */
+.Profile-page-vision {
+    padding: 0px;
+    text-align: center;
+}
+
+.Profile-page-vision-title {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+/* Styling untuk setiap item visi */
+.Profile-page-vision-desc {
+    margin-bottom: 20px;
+}
+
+.Profile-page-vision-desc p {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.6;
+    margin: 0 auto;
+    /* max-width: 800px; */
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .Profile-page-vision-title {
+        font-size: 1.3rem;
+    }
+
+    .Profile-page-vision-desc p {
+        font-size: 0.85rem;
+        /* max-width: 600px; */
+    }
+}
+
+@media (max-width: 480px) {
+    .Profile-page-vision-title {
+        font-size: 1rem;
+    }
+
+    .Profile-page-vision-desc p {
+        font-size: 0.65rem;
+        max-width: 90%;
+    }
+}
+
+/* Styling umum untuk halaman misi */
+.Profile-page-mission {
+    padding: 0px;
+    text-align: center;
+}
+
+.Profile-page-mission-title {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+/* Styling untuk daftar misi */
+.Profile-page-mission-list {
+    list-style-type: decimal;
+    /* padding-left: 20px; */
+    /* max-width: 800px; */
+    /* margin: 0 auto; */
+    text-align: left;
+}
+
+.Profile-page-mission-desc {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+@media (max-width: 768px) {
+    .Profile-page-mission-title {
+        font-size: 1.3rem;
+    }
+
+    .Profile-page-mission-desc {
+        font-size: 0.85rem;
+    }
+
+    .Profile-page-mission-list {
+        padding-left: 0px;
+    }
+}
+
+@media (max-width: 480px) {
+    .Profile-page-mission-title {
+        font-size: 1rem;
+    }
+
+    .Profile-page-mission-desc {
+        font-size: 0.65rem;
+    }
+
+    .Profile-page-mission-list {
+        padding-left: 10px;
+    }
+}

@@ -1,0 +1,99 @@
+.Page-Kandang {
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+  }
+  
+  .Detail-Page-Kandang {
+    display: flex;
+    flex-direction: row;
+    padding: 20px;
+    border-radius: 8px;
+    width: 100%;
+    gap: 160px;
+  }
+  
+  .Detail-Page-Kandang img {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 20px;
+  }
+  
+  .Desc-Page-Kandang {
+    /* Alignment jika dibutuhkan */
+  }
+  
+  .Title-Desc-Kandang {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  .Desc-Page-Kandang p {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 8px;
+  }
+  
+  .Address-Page-Kandang {
+    font-size: 16px;
+    color: #333;
+    font-weight: 600;
+  }
+  
+  /* Responsif untuk layar 768px */
+  @media (max-width: 768px) {
+    .Detail-Page-Kandang {
+      /* flex-direction: column; */
+      align-items: center;
+      padding: 0;
+      gap: 30px; /* Mengurangi jarak antara gambar dan deskripsi */
+    }
+  
+    .Detail-Page-Kandang img {
+      max-width: 200px; /* Mengurangi ukuran gambar untuk layar yang lebih kecil */
+    }
+  
+    .Title-Desc-Kandang {
+      font-size: 1.5rem; /* Mengurangi ukuran font judul */
+    }
+
+    .Desc-Page-Kandang p {
+        font-size: 13px;
+        /* color: #666; */
+        /* margin-bottom: 8px; */
+      }
+      
+      .Address-Page-Kandang {
+        font-size: 12px;
+      }
+  }
+  
+  /* Responsif untuk layar 480px */
+  @media (max-width: 480px) {
+    .Detail-Page-Kandang {
+      flex-direction: column;
+      align-items: center;
+      gap: 20px; /* Mengurangi lagi jarak antara gambar dan deskripsi */
+      padding: 10px; /* Mengurangi padding agar lebih pas di layar kecil */
+    }
+  
+    .Detail-Page-Kandang img {
+      max-width: 190px; /* Membuat gambar full width pada layar sangat kecil */
+    }
+  
+    .Title-Desc-Kandang {
+      font-size: 1rem; /* Mengurangi ukuran font judul lebih lanjut */
+    }
+  
+    .Desc-Page-Kandang p {
+      font-size: 14px; /* Mengurangi ukuran font deskripsi */
+    }
+  
+    .Address-Page-Kandang {
+      font-size: 14px; /* Mengurangi ukuran font alamat */
+    }
+  }
+  

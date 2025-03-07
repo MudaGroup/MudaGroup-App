@@ -3,7 +3,6 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    /* background-color: #003399; */
     padding: 0.75rem 1.5rem;
     top: 0; /* Menempel di bagian atas halaman */
     z-index: 1000;
@@ -25,6 +24,7 @@ nav img {
     cursor: pointer;
     padding: 5px;
     transition: transform 0.3s ease-in-out;
+    margin-left: auto; /* Memindahkan menu ke sebelah kanan */
 }
 
 .menu span {
@@ -46,14 +46,6 @@ nav img {
 }
 
 .menu.open span:nth-child(3) {
-    transform: translateY(-6px) rotate(-45deg);
-}
-
-.menu.open span:nth-child(4) {
-    transform: translateY(-6px) rotate(45deg);
-}
-
-.menu.open span:nth-child(5) {
     transform: translateY(-6px) rotate(-45deg);
 }
 
