@@ -16,8 +16,6 @@ const ProjectGedung = () => {
                 const response = await fetch(`${API_BASE_URL}/api/buildings?populate=*`);
                 const result = await response.json();
 
-                console.log("API Response:", result);
-
                 if (result.data) {
                     const formattedData = result.data.map((item) => {
                         return {
@@ -29,11 +27,6 @@ const ProjectGedung = () => {
                             imageUrl: item.image?.url ? `http://localhost:1337${item.image.url}` : "",
                         };
                     });
-                    
-                    console.log("Formatted Data:", formattedData);
-                    
-
-                    console.log("Formatted Data:", formattedData);
                     setProductData(formattedData);
                 }
             } catch (error) {
@@ -56,8 +49,6 @@ const ProjectGedung = () => {
         return statusMatch && locationMatch;
     });
 
-    console.log("Filtered Products:", filteredProducts);
-
     const handleButtonClick = (id, name) => {
         if (!name) {
             console.error("Error: Nama produk tidak tersedia!");
@@ -65,59 +56,62 @@ const ProjectGedung = () => {
         }
 
         const formattedName = name.toLowerCase().replace(/\s+/g, "-");
-        console.log(`Navigating to: /GeneralContractor/Gedung/${formattedName}/${id}`);
-
         navigate(`/GeneralContractor/Gedung/${formattedName}/${id}`);
     };
 
     return (
-        <div className="General-Contractor-Kandang container">
-            <a href="/GeneralContractor" className="btn-back-General-Contractor">
+        <div className="mx-[6rem] pt-12 pb-8">
+            <a href="/GeneralContractor" className="inline-flex items-center p-3 bg-gray-200 rounded-full text-gray-700 text-2xl mb-5 hover:bg-gray-300">
                 <IoMdArrowRoundBack />
             </a>
-            <h1 className="General-Contractor-Kandang-title">Project Gedung</h1>
+            <h1 className="text-3xl font-bold text-center my-6 text-gray-800">Project Gedung</h1>
 
-            <div className="General-Contractor-Kandang-Category">
-                <div className="Category-Status">
-                    <select id="status" value={status} onChange={handleStatusChange}>
-                        <option value="">Semua</option>
-                        {uniqueStatuses.map((statusItem, index) => (
-                            <option key={index} value={statusItem}>
-                                {statusItem}
-                            </option>
-                        ))}
-                    </select>
-                </div>
+            <div className="flex flex-wrap gap-4 justify-center mb-6">
+                <select 
+                    className="border rounded-lg p-2" 
+                    value={status} 
+                    onChange={handleStatusChange}
+                >
+                    <option value="">Semua Status</option>
+                    {uniqueStatuses.map((statusItem, index) => (
+                        <option key={index} value={statusItem}>{statusItem}</option>
+                    ))}
+                </select>
 
-                <div className="Category-Location">
-                    <select id="location" value={location} onChange={handleLocationChange}>
-                        <option value="">Semua</option>
-                        {uniqueLocations.map((locationItem, index) => (
-                            <option key={index} value={locationItem}>
-                                {locationItem}
-                            </option>
-                        ))}
-                    </select>
-                </div>
+                <select 
+                    className="border rounded-lg p-2" 
+                    value={location} 
+                    onChange={handleLocationChange}
+                >
+                    <option value="">Semua Lokasi</option>
+                    {uniqueLocations.map((locationItem, index) => (
+                        <option key={index} value={locationItem}>{locationItem}</option>
+                    ))}
+                </select>
             </div>
 
-            <div className="General-Contractor-Kandang-Card">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {filteredProducts.length > 0 ? (
                     filteredProducts.map((product) => (
-                        <button
-                            key={product.id}
+                        <button 
+                            key={product.id} 
                             onClick={() => handleButtonClick(product.id, product.name)}
+                            className="bg-white shadow-md rounded-lg p-4 flex flex-col items-center hover:shadow-lg transition border-solid border-2"
                         >
                             {product.imageUrl ? (
-                                <img src={product.imageUrl} alt={product.name} style={{ width: "100%", height: "auto" }} />
+                                <img 
+                                    src={product.imageUrl} 
+                                    alt={product.name} 
+                                    className="w-full h-48 object-cover rounded-md"
+                                />
                             ) : (
-                                <p>Gambar tidak tersedia</p>
+                                <p className="text-gray-500">Gambar tidak tersedia</p>
                             )}
-                            <h2>{product.name}</h2>
+                            <h2 className="text-lg font-semibold mt-3">{product.name}</h2>
                         </button>
                     ))
                 ) : (
-                    <p>Data tidak ditemukan</p>
+                    <p className="text-center text-gray-500">Data tidak ditemukan</p>
                 )}
             </div>
         </div>

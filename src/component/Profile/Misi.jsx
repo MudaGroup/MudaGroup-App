@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import "./Profile.css";
 
 const Misi = () => {
     const [mission, setMission] = useState([]);
@@ -34,17 +33,17 @@ const Misi = () => {
     }, []);
 
     return (
-        <div className="Profile-page-mission">
-            <h2 className="Profile-page-mission-title">Misi Muda Group</h2>
+        <div className="p-0 text-center">
+            <h2 className="text-3xl font-bold text-center mb-10">Misi Muda Group</h2>
 
             {loading ? (
                 <p>Loading...</p>
             ) : error ? (
-                <p>{error}</p>
+                <p className="text-red-500">{error}</p>
             ) : mission.length > 0 ? (
-                <ol className="Profile-page-mission-list">
+                <ol className="list-decimal text-left">
                     {mission.map((item) => (
-                        <li key={item.id} className="Profile-page-mission-desc">
+                        <li key={item.id} className="text-gray-600 text-lg text-justify">
                             {item.name || item.attributes?.name || "Data tidak tersedia"}
                         </li>
                     ))}

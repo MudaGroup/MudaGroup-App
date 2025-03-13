@@ -1,62 +1,54 @@
 import { IoMdArrowRoundBack } from 'react-icons/io';
 import { useParams, useNavigate } from 'react-router-dom';
-import "./Project.css";
 import { useEffect, useState } from 'react';
 
 const TempatIbadah = () => {
   const { id } = useParams();
   const navigate = useNavigate();
-  const [place, setPlace] = useState(null);
+  const [product, setProduct] = useState(null);
 
   useEffect(() => {
-    const fetchPlace = async () => {
+    const fetchProduct = async () => {
       try {
         const response = await fetch(`http://localhost:1337/api/worship-places?populate=*`);
         const data = await response.json();
-        const filteredPlace = data.data.find(item => item.id.toString() === id);
-        setPlace(filteredPlace);
+        const filteredProduct = data.data.find(item => item.id.toString() === id);
+        setProduct(filteredProduct);
       } catch (error) {
-        console.error("Error fetching place:", error);
+        console.error("Error fetching data:", error);
       }
     };
 
-    fetchPlace();
+    fetchProduct();
     window.scrollTo(0, 0);
   }, [id]);
 
-  if (!place) {
-    return <p>Tempat ibadah tidak ditemukan</p>;
+  if (!product) {
+    return <p className="text-center text-gray-500">Produk tidak ditemukan</p>;
   }
 
-  // ✅ Perbaikan cara mengambil atribut dari API
-  const { name, desc, address, image } = place;
-
-  // ✅ Perbaikan cara mengambil URL gambar
-  const imageUrl = image?.url 
-    ? `http://localhost:1337${image.url}` 
+  const imageUrl = product.image?.url 
+    ? `http://localhost:1337${product.image.url}` 
     : "default.jpg";
 
   return (
-    <div className="Page-Kandang container">
-      <button onClick={() => navigate(-1)} className='btn-back-General-Contractor'>
+    <div className="mx-[6rem] pt-12 pb-8">
+      <button onClick={() => navigate(-1)} className='inline-flex items-center p-3 bg-gray-200 rounded-full text-gray-700 text-2xl mb-5 hover:bg-gray-300'>
         <IoMdArrowRoundBack />
       </button>
 
-      <div className="Detail-Page-Kandang">
-        <img src={imageUrl} alt={name} />
-        <div className="Desc-Page-Kandang">
-          <h2 className='Title-Desc-Kandang'>{name}</h2>
-          
-          {/* ✅ Perbaikan cara menampilkan deskripsi */}
-          <p className="Desc-Page-Kandang">
-            {desc?.map((item, index) => (
+      <div className="flex flex-col md:flex-row items-center md:items-start gap-10">
+        <img src={imageUrl} alt={product.name} className="w-full h-[24rem] object-cover md:w-1/2 max-w-lg rounded-lg" />
+        <div className="w-full md:w-1/2">
+          <h2 className='text-2xl font-bold mb-4'>{product.name}</h2>
+          <p className="text-gray-600 mb-4">
+            {product.desc?.map((item, index) => (
               <span key={index}>
                 {item.children?.map(child => child.text).join(" ")}
               </span>
             ))}
           </p>
-
-          <p className="Address-Page-Kandang">Alamat: {address}</p>
+          <p className="text-gray-800 font-semibold">Alamat: {product.address}</p>
         </div>
       </div>
     </div>

@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import "./Profile.css";
 
 const Visi = () => {
     const [vision, setVision] = useState([]);
@@ -31,17 +30,19 @@ const Visi = () => {
     }, []);
     
     return (
-        <div className="Profile-page-vision">
-            <h2 className="Profile-page-vision-title">Visi Muda Group</h2>
+        <div className="p-0 text-center">
+            <h2 className="text-3xl font-bold text-center mb-10">Visi Muda Group</h2>
 
             {loading ? (
                 <p>Loading...</p>
             ) : error ? (
-                <p>{error}</p>
+                <p className="text-red-500">{error}</p>
             ) : vision.length > 0 ? (
                 vision.map((item) => (
-                    <div key={item.id} className="Profile-page-vision-desc">
-                        <p>{item.name || "Data tidak tersedia"}</p>
+                    <div key={item.id} className="mb-5">
+                        <p className="text-gray-600 text-lg text-justify">
+                            {item.name || "Data tidak tersedia"}
+                        </p>
                     </div>
                 ))
             ) : (
